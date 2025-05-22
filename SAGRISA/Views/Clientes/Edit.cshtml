@@ -1,0 +1,79 @@
+﻿@model SAGRISA.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodCliente" />
+            <div class="form-group">
+                <label asp-for="NomCliente" class="control-label"></label>
+                <input asp-for="NomCliente" class="form-control" />
+                <span asp-validation-for="NomCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clase" class="control-label"></label>
+                <input asp-for="Clase" class="form-control" />
+                <span asp-validation-for="Clase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor" class="control-label"></label>
+                <select asp-for="Vendedor" class="form-control" asp-items="ViewBag.Vendedor"></select>
+                <span asp-validation-for="Vendedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ciudad" class="control-label"></label>
+                <input asp-for="Ciudad" class="form-control" />
+                <span asp-validation-for="Ciudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tpago" class="control-label"></label>
+                <input asp-for="Tpago" class="form-control" />
+                <span asp-validation-for="Tpago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lprecios" class="control-label"></label>
+                <input asp-for="Lprecios" class="form-control" />
+                <span asp-validation-for="Lprecios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MontoCredito" class="control-label"></label>
+                <input asp-for="MontoCredito" class="form-control" />
+                <span asp-validation-for="MontoCredito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalDeuda" class="control-label"></label>
+                <input asp-for="TotalDeuda" class="form-control" />
+                <span asp-validation-for="TotalDeuda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaldoCredito" class="control-label"></label>
+                <input asp-for="SaldoCredito" class="form-control" />
+                <span asp-validation-for="SaldoCredito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
